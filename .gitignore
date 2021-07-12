@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # Sensitive files
-static/js/config.js
+Leaflet-Step-a/static/js/config.js
