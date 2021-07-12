@@ -2,3 +2,4 @@
 - Creates initial file structure
 - Updates gitignore
 - Adds basic index.html
+- Adds basic map
