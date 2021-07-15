@@ -24,7 +24,9 @@ function quakePoints(locations, intensity) {
         fillColor: markerColor,
         fillOpacity: .7,
         radius: 40000*intensity[i]
-      })
+      }).bindPopup(
+        "<h1>Magnitude: "+intensity[i]+"</h1>"
+      )
     );
     i++;
   });

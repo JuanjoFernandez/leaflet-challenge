@@ -11,3 +11,5 @@
 - Creaters markers group
 - Renders markers layer
 - Adds conditions for marker size and color
+- Fixes color gradient
+- Adds basic popups
