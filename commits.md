@@ -10,3 +10,4 @@
 - Pulls circle markers array
 - Creaters markers group
 - Renders markers layer
+- Adds conditions for marker size and color
