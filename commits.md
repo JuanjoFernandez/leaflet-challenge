@@ -8,3 +8,4 @@
 - Gets JSON data
 - Changes map style to dark
 - Pulls circle markers array
+- Creaters markers group

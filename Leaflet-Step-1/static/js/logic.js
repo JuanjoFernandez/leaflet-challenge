@@ -15,9 +15,22 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(myMap);
 
 // Adding circles
-// function quakePoints(locations) {
-
-// }
+var markersGroup = []
+function quakePoints(locations) {
+  console.log("Running quakePoints");
+  locations.forEach(coordinate => {
+    markersGroup.push(
+      L.circle([coordinate[0], coordinate[1]], {
+        color: "red",
+        fillColor: "red",
+        fillOpacity: 0.75,
+        radius: 10000
+      })
+    );
+  });
+  console.log("For done");
+  console.log (markersGroup);
+}
 // L.circle([32.7767, -96.7979], {
 //   color: "red",
 //   fillColor: "red",
@@ -35,5 +48,7 @@ d3.json(queryURL).then(function (data) {
   for (var i = 0; i < data.features.length; i++) {
     locations.push(data.features[i].geometry.coordinates);
   }
-  console.log(locations);
+  
+  // Running functions
+quakePoints(locations);
 });
