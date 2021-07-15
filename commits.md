@@ -9,3 +9,4 @@
 - Changes map style to dark
 - Pulls circle markers array
 - Creaters markers group
+- Renders markers layer
