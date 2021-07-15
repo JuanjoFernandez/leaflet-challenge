@@ -5,17 +5,17 @@ function quakePoints(locations, intensity) {
   locations.forEach(coordinate => {
     // Color grading depth
     if (coordinate[2] <= 10) {
-      markerColor = "green"
+      markerColor = "#19ff00"
     } else if (coordinate[2] <= 30) {
-      markerColor = "yellow"
+      markerColor = "#55ff00"
     } else if (coordinate[2] <= 50) {
-      markerColor = "light-orange"
+      markerColor = "#8cff00"
     } else if (coordinate[2] <= 70) {
-      markerColor = "orange"
+      markerColor = "#ffff00"
     } else if (coordinate[2] <= 90) {
-      markerColor = "light-red"
+      markerColor = "#ff6100"
     } else {
-      markerColor = "red"
+      markerColor = "#ff0000"
     };
 
     markersGroup.push(
