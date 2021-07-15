@@ -6,3 +6,5 @@
 
 # 07/14/2021
 - Gets JSON data
+- Changes map style to dark
+- Pulls circle markers array
