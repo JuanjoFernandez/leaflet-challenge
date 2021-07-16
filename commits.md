@@ -13,3 +13,4 @@
 - Adds conditions for marker size and color
 - Fixes color gradient
 - Adds basic popups
+- Adds legend box

@@ -1,7 +1,7 @@
 // Adding circles
 var markersGroup = []
 function quakePoints(locations, intensity) {
-  var i=0
+  var i = 0
   locations.forEach(coordinate => {
     // Color grading depth
     if (coordinate[2] <= 10) {
@@ -23,9 +23,9 @@ function quakePoints(locations, intensity) {
         color: "black",
         fillColor: markerColor,
         fillOpacity: .7,
-        radius: 40000*intensity[i]
+        radius: 40000 * intensity[i]
       }).bindPopup(
-        "<h1>Magnitude: "+intensity[i]+"</h1>"
+        "<h1>Magnitude: " + intensity[i] + "</h1>"
       )
     );
     i++;
@@ -42,7 +42,7 @@ d3.json(queryURL).then(function (data) {
     locations.push(data.features[i].geometry.coordinates);
     intensity.push(data.features[i].properties.mag);
   }
-  
+
   // Running functions
   markersGroup = quakePoints(locations, intensity);
   var quakesLayer = L.layerGroup(markersGroup);
@@ -53,7 +53,7 @@ d3.json(queryURL).then(function (data) {
     tileSize: 512,
     maxZoom: 18,
     zoomOffset: -1,
-    id: "mapbox/dark-v10",
+    id: "mapbox/satellite-v9",
     accessToken: API_KEY
   });
 
@@ -63,6 +63,29 @@ d3.json(queryURL).then(function (data) {
     zoom: 4,
     layers: [darkLayer, quakesLayer]
   });
+
+  // Adding the legend box
+  var legend = L.control({ position: 'bottomright' });
+  legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend');
+    labels = ['<strong>Categories</strong>'],
+      categories = ['Road Surface', 'Signage', 'Line Markings', 'Roadside Hazards', 'Other'];
+
+    for (var i = 0; i < categories.length; i++) {
+
+      div.innerHTML +=
+        labels.push(
+          '<i class="circle" style="background:' + "red" + '"></i> ' +
+          (categories[i] ? categories[i] : '+'));
+
+    }
+    div.innerHTML = labels.join('<br>');
+    console.log("Legend added")
+    return div;
+  };
+  legend.addTo(myMap);
+
 });
 
 
