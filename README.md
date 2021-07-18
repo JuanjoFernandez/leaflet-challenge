@@ -15,9 +15,29 @@ This project consists in creating a geographical visualization of earthquakes th
 
 # Repository structure
 ````bash
-
+│   .gitignore
+│   commits.md
+│   LICENSE
+│   README.md
+│
+├───Leaflet-Step-1
+│   │   index.html
+│   │
+│   └───static
+│       ├───css
+│       │       style.css
+│       │
+│       ├───images
+│       └───js
+│               .eslintrc.json
+│               config.js
+│               logic.js
+│
+└───resources
+        logo.png
 ````
 
 # Screenshots
-
+![screenshot1](resources/screenshot1.png)
+![screenshot2](resources/screenshot2.png)
 

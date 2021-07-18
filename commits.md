@@ -24,3 +24,4 @@
 - Displays correct info on popups
 - Updates Readme
 - Adds header to md files
+- Updates readme
