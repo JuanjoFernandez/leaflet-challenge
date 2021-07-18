@@ -4,7 +4,7 @@ function quakePoints(locations, intensity) {
   var i = 0
   locations.forEach(coordinate => {
     // Color grading depth
-    if (coordinate[2] <= 10) {
+    if (coordinate[2] < 10) {
       markerColor = "#19ff00"
     } else if (coordinate[2] <= 30) {
       markerColor = "#55ff00"
@@ -69,14 +69,34 @@ d3.json(queryURL).then(function (data) {
   legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend');
-    labels = ['<strong>Categories</strong>'],
-      categories = ['Road Surface', 'Signage', 'Line Markings', 'Roadside Hazards', 'Other'];
+    labels = ['<strong>Earthquake depth</strong>'],
+      categories = ['<10', '10-30', '30-50', '50-70', '70-90', '>90'];
 
+    var color = "";
     for (var i = 0; i < categories.length; i++) {
-
+      switch (i) {
+        case 0:
+          color = "#19ff00"
+          break;
+        case 1:
+          color = "#55ff00"
+          break;
+        case 2:
+          color = "#8cff00";
+          break;
+        case 3:
+          color = "#ffff00";
+          break;
+        case 4:
+          color = "#ff6100";
+          break;
+        case 5:
+          color = "#ff0000";
+          break;
+      }
       div.innerHTML +=
         labels.push(
-          '<i class="circle" style="background:' + "red" + '"></i> ' +
+          '<i class="circle" style="background:' + color + '"></i> ' +
           (categories[i] ? categories[i] : '+'));
 
     }

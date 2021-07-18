@@ -9,8 +9,11 @@
 - Changes map style to dark
 - Pulls circle markers array
 - Creaters markers group
-- Renders markers layer
+- Renders markers
 - Adds conditions for marker size and color
 - Fixes color gradient
 - Adds basic popups
 - Adds legend box
+
+# 07/17/2021
+- Formats legend box
