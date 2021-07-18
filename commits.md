@@ -18,3 +18,4 @@
 # 07/17/2021
 - Formats legend box
 - Displays correct info on popups
+- Updates Readme
