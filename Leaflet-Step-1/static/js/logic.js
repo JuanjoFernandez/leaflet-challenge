@@ -26,7 +26,7 @@ function quakePoints(locations, intensity, places, dates) {
         radius: 40000 * intensity[i]
       }).bindPopup(
         "<h1>" + places[i] + "</h1>" + "<hr>" +
-        "<h3>Magnitude: " + intensity[i] + " Depth:" + coordinate[2] + "</h3>" +
+        "<h3>Magnitude: " + intensity[i] + " Depth: " + coordinate[2] + "</h3>" +
         "<h3>Date: " + dates[i] + "</h3>"
       )
     );
