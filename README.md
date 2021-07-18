@@ -1,3 +1,4 @@
+![header](resources/logo.png)
 # leaflet-challenge
 
 # Project Overview

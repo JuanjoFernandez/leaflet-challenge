@@ -1,10 +1,14 @@
-# 07/12/2021
+![header](resources/logo.png)
+
+# Leaflet-challenge commit log
+
+## *07/12/2021*
 - Creates initial file structure
 - Updates gitignore
 - Adds basic index.html
 - Adds basic map
 
-# 07/14/2021
+## *07/14/2021*
 - Gets JSON data
 - Changes map style to dark
 - Pulls circle markers array
@@ -15,7 +19,8 @@
 - Adds basic popups
 - Adds legend box
 
-# 07/17/2021
+## *07/17/2021*
 - Formats legend box
 - Displays correct info on popups
 - Updates Readme
+- Adds header to md files
