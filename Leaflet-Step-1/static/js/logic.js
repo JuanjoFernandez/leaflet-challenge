@@ -1,6 +1,6 @@
 // Adding circles
 var markersGroup = []
-function quakePoints(locations, intensity) {
+function quakePoints(locations, intensity, places, dates) {
   var i = 0
   locations.forEach(coordinate => {
     // Color grading depth
@@ -25,7 +25,9 @@ function quakePoints(locations, intensity) {
         fillOpacity: .7,
         radius: 40000 * intensity[i]
       }).bindPopup(
-        "<h1>Magnitude: " + intensity[i] + "</h1>"
+        "<h1>" + places[i] + "</h1>" + "<hr>" +
+        "<h3>Magnitude: " + intensity[i] + " Depth:" + coordinate[2] + "</h3>" +
+        "<h3>Date: " + dates[i] + "</h3>"
       )
     );
     i++;
@@ -38,13 +40,18 @@ var queryURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_we
 d3.json(queryURL).then(function (data) {
   var locations = [];
   var intensity = [];
+  var places = [];
+  var dates = [];
   for (var i = 0; i < data.features.length; i++) {
     locations.push(data.features[i].geometry.coordinates);
     intensity.push(data.features[i].properties.mag);
+    places.push(data.features[i].properties.place);
+    dates.push(Date(data.features[i].properties.time));
   }
+  console.log(data.features);
 
   // Running functions
-  markersGroup = quakePoints(locations, intensity);
+  markersGroup = quakePoints(locations, intensity, places, dates);
   var quakesLayer = L.layerGroup(markersGroup);
 
   // Adding the dark theme background map
